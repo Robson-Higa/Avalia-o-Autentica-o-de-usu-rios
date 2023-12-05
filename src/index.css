@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+}
+
+@font-face {
+  font-family: 'bold';
+  src: url(./assets/fonts/Urbanist-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'regular';
+  src: url(./assets/fonts/Urbanist-Regular.ttf);
+}
+

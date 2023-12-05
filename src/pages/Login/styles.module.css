@@ -1,0 +1,35 @@
+.redirect {
+  font-family: 'regular';
+  text-align: center;
+  margin-top: 30px;
+}
+
+.redirect a {
+  text-decoration: none;
+  color: #000;
+}
+
+.redirect a:hover {
+  color: #ccc;
+}
+
+.googleCard {
+  background-color: #555;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  width: 400px;
+  border: none;
+  cursor: pointer;
+}
+
+.googleCard img {
+  width: 32px;
+}
+
+.googleCard span {
+  margin-left: auto;
+  color: white;
+  font-family: 'bold';
+  font-size: 18px;
+}
