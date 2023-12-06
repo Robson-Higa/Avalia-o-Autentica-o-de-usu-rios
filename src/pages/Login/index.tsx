@@ -9,6 +9,7 @@ import globalStyles from '../../globals.module.css'
 import styles from './styles.module.css'
 import google from '../../assets/img/google.png'
 import github from '../../assets/img/git.png'
+import facebook from '../../assets/img/face.png'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -154,7 +155,7 @@ const Login = () => {
       <button
         className={styles.googleCard}
         onClick={() => signInWithFacebook()}>
-        <img src={github} alt="GitHub" />
+        <img src={facebook} alt="Facebook" />
         <span>Entrar com Facebook</span>
       </button>
 
