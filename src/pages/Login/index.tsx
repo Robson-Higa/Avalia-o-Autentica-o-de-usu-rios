@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import { GithubAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { Link, useNavigate } from 'react-router-dom'
 import { jwtDecode } from 'jwt-decode'
 
@@ -8,6 +8,7 @@ import { auth } from '../../config/firebase'
 import globalStyles from '../../globals.module.css'
 import styles from './styles.module.css'
 import google from '../../assets/img/google.png'
+import github from '../../assets/img/git.png'
 
 const Login = () => {
   const [email, setEmail] = useState('')
@@ -74,15 +75,13 @@ const Login = () => {
   }
 
   const signInWithGitHub = async () => {
-    const provider = new GoogleAuthProvider()
+    const provider = new GithubAuthProvider()
     try {
       const result = await signInWithPopup(auth, provider)
       const user = result.user
       const { email, photoURL, displayName } = user
       console.log(email, photoURL, displayName)
 
-      // const userCredential =
-      //   GoogleAuthProvider.credentialFromResult(result)
       const token = await auth.currentUser?.getIdToken()
       console.log(token)
       if (token) {
@@ -135,6 +134,13 @@ const Login = () => {
         onClick={() => signInWithGoogle()}>
         <img src={google} alt="Google" />
         <span>Entrar com Google</span>
+      </button>
+
+      <button
+        className={styles.googleCard}
+        onClick={() => signInWithGitHub()}>
+        <img src={github} alt="GitHub" />
+        <span>Entrar com GitHub</span>
       </button>
     </div>
   )
