@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react'
-import { GithubAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
+import { FacebookAuthProvider, GithubAuthProvider, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth'
 import { Link, useNavigate } from 'react-router-dom'
 import { jwtDecode } from 'jwt-decode'
 
@@ -50,6 +50,28 @@ const Login = () => {
       setPassword('')
     }
   }
+
+  const signInWithFacebook = async () => {
+    const provider = new FacebookAuthProvider()
+    try {
+      const result = await signInWithPopup(auth, provider)
+      const user = result.user
+      const { email, photoURL, displayName } = user
+      console.log(email, photoURL, displayName)
+
+      const token = await auth.currentUser?.getIdToken()
+      console.log(token)
+      if (token) {
+        const decodedToken = jwtDecode(token)
+        const { exp } = decodedToken
+        setExp(exp || 0)
+        navigate('/home')
+      }
+    } catch (err) {
+      console.log(err)
+    }
+  }
+
 
   const signInWithGoogle = async () => {
     const provider = new GoogleAuthProvider()
@@ -128,6 +150,13 @@ const Login = () => {
           <h3 className={globalStyles.errorCard}>Credenciais inválidas</h3>
         )}
       </div>
+
+      <button
+        className={styles.googleCard}
+        onClick={() => signInWithFacebook()}>
+        <img src={github} alt="GitHub" />
+        <span>Entrar com Facebook</span>
+      </button>
 
       <button
         className={styles.googleCard}
