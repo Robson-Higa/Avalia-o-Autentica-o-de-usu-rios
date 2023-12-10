@@ -29,7 +29,7 @@
   padding: 5px;
   text-align: center;
   font-size: 100%;
-  border: 2px solid #ccc;
+  border: 2px solid #728C58;
   margin-bottom: 20px;
 }
 
@@ -44,7 +44,7 @@
 
 .loginForm input[type=submit], .button {
   cursor: pointer;
-  background-color: #555;
+  background-color: #728C58;
   color: white;
   font-family: 'bold';
   font-size: 100%;

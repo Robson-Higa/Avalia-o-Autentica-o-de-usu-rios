@@ -153,21 +153,21 @@ const Login = () => {
       </div>
 
       <button
-        className={styles.card}
+        className={styles.facebookCard}
         onClick={() => signInWithFacebook()}>
         <img src={facebook} alt="Facebook" />
         <span>Entrar com Facebook</span>
       </button>
 
       <button
-        className={styles.card}
+        className={styles.googleCard}
         onClick={() => signInWithGoogle()}>
         <img src={google} alt="Google" />
         <span>Entrar com Google</span>
       </button>
 
       <button
-        className={styles.card}
+        className={styles.gitHubCard}
         onClick={() => signInWithGitHub()}>
         <img src={github} alt="GitHub" />
         <span>Entrar com GitHub</span>

@@ -13,9 +13,22 @@
   color: #ccc;
 }
 
-.card {
-  background-image: linear-gradient(to right, rgb(242, 238, 238), #555);
+  .gitHubCard {
+    background-image: linear-gradient(to right, rgb(242, 238, 238), #555);
+  }
+
+  .facebookCard {
+    background-image: linear-gradient(to right, rgb(242, 238, 238), #3B5998);
+  }
+
+  .googleCard {
+    background-image: linear-gradient(to right, rgb(242, 238, 238), #F65D52);
+  }
+
+.gitHubCard, .facebookCard, .googleCard{
   display: flex;
+  margin-top: 5px;
+  border-radius: 8px;
   align-items: center;
   padding: 20px;
   width: 400px;
@@ -23,11 +36,11 @@
   cursor: pointer;
 }
 
-.card img {
+.googleCard img, .facebookCard img, .gitHubCard img{
   width: 32px;
 }
 
-.card span {
+.googleCard span, .facebookCard span, .gitHubCard span {
   margin-left: auto;
   color: white;
   font-family: 'bold';
